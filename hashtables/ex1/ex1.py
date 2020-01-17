@@ -16,14 +16,14 @@ def get_indices_of_item_weights(weights, length, limit):
       hash_table_insert(ht, weights[x], x)
     
     for x in range(0, length):
-      value = hash_table_retrieve(ht, (limit - weights[x]))
-      print(value)
-      if value is None:
-        return None
-      elif value > x:
-        return (value, x)
-      return(x, value)
+      temp = hash_table_retrieve(ht, (limit - weights[x]))
+      if temp is not None:
+        value = temp
+        if value > x:
+          return [value, x]
+        return [x, value]
 
+    return None
 
 
 def print_answer(answer):
