@@ -20,7 +20,7 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
     for x in range(0, length):
-      hash_table_insert(hashtable, tickets[x][0], tickets[x][1])
+      hash_table_insert(hashtable, tickets[x].source, tickets[x].destination)
 
     route[0] = hash_table_retrieve(hashtable, "NONE")
     for x in range(1, length):
